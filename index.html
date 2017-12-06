@@ -9,13 +9,13 @@
 	<!--Zona de juego-->
 	<main class="principal-game">
 		<section class="instruction">
-		<h1 class="title">Adivina el número</h1>
-		<h3 class="tries">0</h3>
-		</section>
 		<section class="principal-content">
+		<h1 class="title">Adivina el número</h1>
 		<p class="principal-text">Introduce aquí tu <em>número</em></p>
 		<input type="number" name="number" id="number" class="number" placeholder="Número">
 		<button type="button" name="button" class="try-btn">Prueba</button>
+		</section>
+		<h3 class="tries">0</h3>
 		</section>
 		<section class="guess">
 			<p class="guess-text">Escribe un número y dale a <em>Prueba</em></p>
@@ -23,7 +23,9 @@
 	</main>
 	<!--Zona de historial de puntos-->
 	<section class="historic-score">
-		<h2>Histórico</h2>
+		<h2 class="score-text">Histórico</h2>
+		<ul>
+		</ul>
 	</section>
 	<script type="text/javascript" src="js/main.js"></script>
 </body>
