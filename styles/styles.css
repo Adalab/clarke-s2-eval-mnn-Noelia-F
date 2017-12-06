@@ -1,3 +1,4 @@
+/*Estilos generales*/
 *{
 	box-sizing: border-box;
 	margin: 0;
@@ -10,13 +11,20 @@ body {
 	margin: 2%;
 }
 
+/*Zona de juego*/
 .principal-game {
 	border-bottom: 2px solid black;
 	width: 100%;
 	text-align: center;
 	min-height: 100vh;
 	display: flex;
+	flex-direction: column;
+}
+.instruction {
+	display: flex;
+	flex-direction: row;
 	justify-content: space-between;
+	margin: 40px auto;
 }
 .title {
 	font-size: 2em;
@@ -27,6 +35,29 @@ body {
 	font-size: 3em;
 	color: red;
 	width: 20%;
+}
+.principal-content{
+	display: flex;
+	flex-direction: column;
+	margin: 40px auto;
+}
+
+.principal-text, .number {
+	margin: 10px auto;
+}
+
+.number {
+	height: 30px;
+}
+.guess {
+	width: 80%;
+	border: 2px solid blue;
+	color: blue;
+	text-align: center;
+	margin: 40px auto;
+}
+.guess-text {
+	padding: 10px;
 }
 .historic-score {
 	width: 100%;
