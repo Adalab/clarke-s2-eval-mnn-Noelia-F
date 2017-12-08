@@ -1,12 +1,12 @@
 'use strict'
-
-var randomNumber=5;
+var randomNumber = (Math.round(Math.random()*100))+1;
+var randomNumber;
 var selectNumber = document.querySelector('.number');
 var button = document.querySelector('.try-btn');
 var textAlert = document.querySelector('.guess-text');
 var newTry = document.querySelector('.tries');
-selectNumber.value = parseInt(selectNumber.value);
 
+selectNumber.value = parseInt(selectNumber.value);
 function sendNumber() {
 		if (selectNumber.value == randomNumber) {
 			textAlert.innerHTML = "Acertado";
@@ -18,4 +18,5 @@ function sendNumber() {
 }
 
 
-button.addEventListener('click', sendNumber, generateRandomNumber);
+button.addEventListener('click', sendNumber);
+button.addEventListener('click', randomNumber);
