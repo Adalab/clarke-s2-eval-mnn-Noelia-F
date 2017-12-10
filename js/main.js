@@ -1,5 +1,6 @@
 'use strict';
 
+var randomNumber;
 var selectNumber = document.querySelector('.number');
 var buttonTry = document.querySelector('.try-btn');
 var textAlert = document.querySelector('.guess-text');
@@ -11,7 +12,13 @@ var listScore = document.querySelector('.score-list');
 var counter = {
 	initialValue: 1,
 };
-var randomNumber = (Math.round(Math.random()*100))+1;
+
+function generateRandomNumber(min, max){
+	randomNumber = (Math.round(Math.random()*(max-min)))+min;
+	return randomNumber;
+}
+
+generateRandomNumber(1, 101);
 
 selectNumber.value = parseInt(selectNumber.value);
 function sendNumber() {
@@ -44,7 +51,16 @@ function sendInfoScore() {
 	return printScore;
 }
 
+function resetGame() {
+	form.classList.add('hidden');
+	textAlert.innerHTML = 'Escribe un número y dale a <em>Prueba</em>';
+	newTry.innerHTML = 0;
+}
+
+console.log(randomNumber);
+
 
 buttonTry.addEventListener('click', sendNumber);
 buttonTry.addEventListener('click', startCount);
 buttonScore.addEventListener('click', sendInfoScore);
+buttonScore.addEventListener('click', resetGame);
