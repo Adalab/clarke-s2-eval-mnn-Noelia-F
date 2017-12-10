@@ -16,7 +16,7 @@ body {
 	border-bottom: 2px solid black;
 	width: 100%;
 	text-align: center;
-	min-height: 100vh;
+	min-height: 50vh;
 	display: flex;
 	flex-direction: column;
 }
@@ -25,29 +25,42 @@ body {
 	flex-direction: row;
 	justify-content: space-between;
 	margin: 40px 0px;
-	width: 95%;
-}
-.title {
-	font-size: 2em;
-	color: black;
-}
-.tries {
-	font-size: 4em;
-	color: red;
-	width: 5%;
+	width: 100%;
 }
 .principal-content{
 	display: flex;
 	flex-direction: column;
-	margin: 40px auto;
+	justify-content: center;
+	align-items: center;
+	width: 90%;
+}
+.title {
+	font-size: 2em;
+	color: black;
+	width: 90%;
+	text-align: center;
+}
+.tries {
+	font-size: 3em;
+	font-weight: bold;
+	color: red;
+	width: 10%;
+}
+.game {
+	display: flex;
+	flex-direction: column;
 }
 
 .principal-text, .number {
 	margin: 10px auto;
 }
 
-.number {
+.number, .name {
 	height: 30px;
+}
+.btn {
+	width: 200px;
+	max-height: 20px;
 }
 .guess {
 	width: 80%;
@@ -59,9 +72,20 @@ body {
 .guess-text {
 	padding: 10px;
 }
+.name-ranking {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
 .historic-score {
 	width: 100%;
 	text-align: center;
+}
+.hidden {
+	display: none;
+}
+.score-list {
+	text-align: left;
 }
 /*Mediaqueries*/
 @media all and (min-width: 900px) {
@@ -72,6 +96,7 @@ body {
 		width: 65%;
 		border-bottom: none;
 		border-right: 2px solid black;
+		min-height: 100vh;
 	}
 	.historic-score {
 		width: 35%;

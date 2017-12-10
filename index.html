@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Adivina el número</title>
 	<link rel="stylesheet" href="styles/styles.css">
 </head>
@@ -9,13 +10,22 @@
 	<!--Zona de juego-->
 	<main class="principal-game">
 		<section class="instruction">
-		<section class="principal-content">
-		<h1 class="title">Adivina el número</h1>
-		<p class="principal-text">Introduce aquí tu <em>número</em></p>
-		<input type="number" name="number" id="number" class="number" placeholder="Número">
-		<button type="button" name="button" class="try-btn">Prueba</button>
-		</section>
-		<h3 class="tries">0</h3>
+		<div class="principal-content">
+			<h1 class="title">Adivina el número</h1>
+			<div class="game">
+				<p class="principal-text">Introduce aquí tu <em>número</em></p>
+				<input type="number" name="number" id="number" class="number" placeholder="Número">
+				<button type="button" name="button" class="try-btn btn">Prueba</button>
+			</div>
+		</div>
+		<div class="tries">
+			<h2>0</h2>
+		</div>
+	</section>
+
+		<section class="name-ranking hidden">
+			<input type="text" name="name" id="name" class="name" placeholder="Introduce tu nombre">
+			<button type="button" name="button" class="save-score btn">Guardar</button>
 		</section>
 		<section class="guess">
 			<p class="guess-text">Escribe un número y dale a <em>Prueba</em></p>
@@ -24,7 +34,7 @@
 	<!--Zona de historial de puntos-->
 	<section class="historic-score">
 		<h2 class="score-text">Histórico</h2>
-		<ul>
+		<ul class="score-list">
 		</ul>
 	</section>
 	<script type="text/javascript" src="js/main.js"></script>

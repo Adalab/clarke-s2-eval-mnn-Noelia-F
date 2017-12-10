@@ -1,14 +1,23 @@
-'use strict'
+'use strict';
+
 var selectNumber = document.querySelector('.number');
-var button = document.querySelector('.try-btn');
+var buttonTry = document.querySelector('.try-btn');
 var textAlert = document.querySelector('.guess-text');
 var newTry = document.querySelector('.tries');
+var form = document.querySelector('.name-ranking');
+var nameScore= document.querySelector('.name');
+var buttonScore = document.querySelector('.save-score');
+var listScore = document.querySelector('.score-list');
+var counter = {
+	initialValue: 1,
+};
 var randomNumber = (Math.round(Math.random()*100))+1;
 
 selectNumber.value = parseInt(selectNumber.value);
 function sendNumber() {
 		if (selectNumber.value == randomNumber) {
 			textAlert.innerHTML = "Acertado";
+			form.classList.remove('hidden');
 		} else if (selectNumber.value < randomNumber) {
 			textAlert.innerHTML = "Número demasiado bajo";
 		} else {
@@ -16,15 +25,26 @@ function sendNumber() {
 		}
 }
 
-
-var counter = {
-	initialValue: 1,
-};
 function startCount() {
 	counter.currentValue= counter.initialValue ++;
 	newTry.innerHTML = counter.currentValue;
 }
 
-button.addEventListener('click', sendNumber);
-button.addEventListener('click', randomNumber);
-button.addEventListener('click', startCount);
+function infoScore(name, score) {
+	this.nam = name;
+	this.scor = score;
+}
+
+function sendInfoScore() {
+	var nameSend = nameScore.value;
+	var scoreSend = counter.currentValue;
+	var printScore = new infoScore (nameSend, scoreSend);
+	console.log(printScore.nam);
+	listScore.innerHTML += '<li>' + printScore.nam + ' - ' + printScore.scor + ' intentos</li>';
+	return printScore;
+}
+
+
+buttonTry.addEventListener('click', sendNumber);
+buttonTry.addEventListener('click', startCount);
+buttonScore.addEventListener('click', sendInfoScore);
