@@ -10,7 +10,8 @@ var nameScore= document.querySelector('.name');
 var buttonScore = document.querySelector('.save-score');
 var listScore = document.querySelector('.score-list');
 var counter = {
-	initialValue: 1,
+	initialValue: 0,
+	currentValue: 1,
 };
 
 function generateRandomNumber(min, max){
@@ -20,8 +21,8 @@ function generateRandomNumber(min, max){
 
 generateRandomNumber(1, 101);
 
-selectNumber.value = parseInt(selectNumber.value);
 function sendNumber() {
+	selectNumber.value = parseInt(selectNumber.value);
 		if (selectNumber.value == randomNumber) {
 			textAlert.innerHTML = "Acertado";
 			form.classList.remove('hidden');
@@ -33,8 +34,8 @@ function sendNumber() {
 }
 
 function startCount() {
-	counter.currentValue= counter.initialValue ++;
-	newTry.innerHTML = counter.currentValue;
+	var incrementCounter = counter.currentValue++;
+	newTry.innerHTML = incrementCounter;
 }
 
 function infoScore(name, score) {
@@ -54,9 +55,14 @@ function sendInfoScore() {
 function resetGame() {
 	form.classList.add('hidden');
 	textAlert.innerHTML = 'Escribe un número y dale a <em>Prueba</em>';
+}
+function resetCounter() {
+	counter.reset = function() {
+	counter.currentValue= counter.initialValue + 1;
+	}
+	counter.reset();
 	newTry.innerHTML = 0;
 }
-
 console.log(randomNumber);
 
 
@@ -64,3 +70,4 @@ buttonTry.addEventListener('click', sendNumber);
 buttonTry.addEventListener('click', startCount);
 buttonScore.addEventListener('click', sendInfoScore);
 buttonScore.addEventListener('click', resetGame);
+buttonScore.addEventListener('click', resetCounter);
