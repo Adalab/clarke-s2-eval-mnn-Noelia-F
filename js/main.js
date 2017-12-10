@@ -1,6 +1,6 @@
 'use strict';
 
-var randomNumber;
+var newRandomNumber;
 var selectNumber = document.querySelector('.number');
 var buttonTry = document.querySelector('.try-btn');
 var textAlert = document.querySelector('.guess-text');
@@ -15,11 +15,10 @@ var counter = {
 };
 
 function generateRandomNumber(min, max){
-	randomNumber = (Math.round(Math.random()*(max-min)))+min;
-	return randomNumber;
+	newRandomNumber = (Math.ceil(Math.random()*(max-min)))+min;
+	return newRandomNumber;
 }
-
-generateRandomNumber(1, 101);
+var randomNumber = generateRandomNumber(1, 100);
 
 function sendNumber() {
 	selectNumber.value = parseInt(selectNumber.value);
@@ -63,6 +62,9 @@ function resetCounter() {
 	counter.reset();
 	newTry.innerHTML = 0;
 }
+function resetRandomNumber() {
+
+}
 console.log(randomNumber);
 
 
@@ -71,3 +73,4 @@ buttonTry.addEventListener('click', startCount);
 buttonScore.addEventListener('click', sendInfoScore);
 buttonScore.addEventListener('click', resetGame);
 buttonScore.addEventListener('click', resetCounter);
+buttonScore.addEventListener('click', resetRandomNumber);
