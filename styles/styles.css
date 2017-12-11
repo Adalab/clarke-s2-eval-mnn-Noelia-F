@@ -65,19 +65,13 @@ body {
 }
 .instructions {
 	position: absolute;
-	top: 90px;
-	left: 470px;
+	top: 40%px;
+	left: 65%;
 	width: 200px;
 	height: auto;
 	padding: 10px;
 	background-color:rgba(255, 255, 255, 0.5);
 	display: none;
-}
-.show-instructions {
-	cursor: pointer;
-}
-.show-instructions:hover .instructions{
-	display: block;
 }
 .guess {
 	width: 80%;
@@ -105,6 +99,15 @@ body {
 	text-align: left;
 }
 /*Mediaqueries*/
+@media all and (min-width: 600px) {
+	.show-instructions {
+		cursor: pointer;
+	}
+	.show-instructions:hover .instructions{
+		display: block;
+	}
+}
+
 @media all and (min-width: 900px) {
 	body {
 		flex-direction: row;
