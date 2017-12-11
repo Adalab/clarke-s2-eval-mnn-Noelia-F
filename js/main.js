@@ -27,7 +27,9 @@ function sendNumber() {
 			form.classList.remove('hidden');
 		} else if (selectNumber < randomNumber) {
 			textAlert.innerHTML = "Número demasiado bajo";
-		} else {
+		} else if (selectNumber >= 101) {
+			alert("¡cuidado! Debe ser un número del 1 al 100");
+		}else {
 			textAlert.innerHTML = "Número demasiado alto";
 		}
 }
