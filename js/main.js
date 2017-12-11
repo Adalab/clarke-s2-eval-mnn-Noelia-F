@@ -21,11 +21,12 @@ function generateRandomNumber(min, max){
 var randomNumber = generateRandomNumber(1, 100);
 
 function sendNumber() {
-	selectNumber.value = parseInt(selectNumber.value);
-		if (selectNumber.value == randomNumber) {
+		var selectNumber = document.querySelector('.number').value;
+		selectNumber = parseInt(selectNumber);
+		if (selectNumber === randomNumber) {
 			textAlert.innerHTML = "Acertado";
 			form.classList.remove('hidden');
-		} else if (selectNumber.value < randomNumber) {
+		} else if (selectNumber < randomNumber) {
 			textAlert.innerHTML = "Número demasiado bajo";
 		} else {
 			textAlert.innerHTML = "Número demasiado alto";
@@ -51,20 +52,24 @@ function sendInfoScore() {
 	return printScore;
 }
 
-function resetGame() {
+function clear() {
 	form.classList.add('hidden');
 	textAlert.innerHTML = 'Escribe un número y dale a <em>Prueba</em>';
 }
-function resetCounter() {
+
+function resetGame() {
+	clear();
 	counter.reset = function() {
-	counter.currentValue= counter.initialValue + 1;
+		counter.currentValue = counter.initialValue + 1;
 	}
 	counter.reset();
 	newTry.innerHTML = 0;
+	selectNumber.value = '';
+	nameScore.value = '';
+	randomNumber = generateRandomNumber(1, 100);
+	console.log(randomNumber);
 }
-function resetRandomNumber() {
 
-}
 console.log(randomNumber);
 
 
@@ -72,5 +77,3 @@ buttonTry.addEventListener('click', sendNumber);
 buttonTry.addEventListener('click', startCount);
 buttonScore.addEventListener('click', sendInfoScore);
 buttonScore.addEventListener('click', resetGame);
-buttonScore.addEventListener('click', resetCounter);
-buttonScore.addEventListener('click', resetRandomNumber);
