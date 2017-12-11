@@ -11,7 +11,6 @@ var buttonScore = document.querySelector('.save-score');
 var listScore = document.querySelector('.score-list');
 var counter = {
 	initialValue: 0,
-	currentValue: 1,
 };
 
 function generateRandomNumber(min, max){
@@ -34,7 +33,7 @@ function sendNumber() {
 }
 
 function startCount() {
-	counter.currentValue = (counter.initialValue++) + 1;
+	counter.currentValue = (counter.initialValue++) +1;
 	newTry.innerHTML = counter.currentValue;
 }
 
