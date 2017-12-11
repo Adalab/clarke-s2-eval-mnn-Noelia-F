@@ -34,8 +34,8 @@ function sendNumber() {
 }
 
 function startCount() {
-	var incrementCounter = counter.currentValue++;
-	newTry.innerHTML = incrementCounter;
+	counter.currentValue = (counter.initialValue++) + 1;
+	newTry.innerHTML = counter.currentValue;
 }
 
 function infoScore(name, score) {
@@ -60,10 +60,10 @@ function clear() {
 function resetGame() {
 	clear();
 	counter.reset = function() {
-		counter.currentValue = counter.initialValue + 1;
+		counter.initialValue = 0;
+		newTry.innerHTML = counter.initialValue;
 	}
 	counter.reset();
-	newTry.innerHTML = 0;
 	selectNumber.value = '';
 	nameScore.value = '';
 	randomNumber = generateRandomNumber(1, 100);
